@@ -3,27 +3,32 @@ package livraria;
 public class CadastroDeLivros {
 	
 	public static void main(String[] args) {
+
+		Autor autor = new Autor();
+		autor.setNome("Rodrigo Turini");
+		autor.setEmail("rodrigo.turini@caelum.com.br");
+		autor.setCpf("123.456.789.10");
 		
-		Livro livro = new Livro();
-		livro.nome = "Java 8 Prático";
-		livro.descricao = "Novos recursos de linguagem";
-		livro.valor = 59.90;
-		livro.isbn = "978-85-66250-46-6";
+		Livro livro = new Livro(autor);
+		livro.setNome("Java 8 Prático");
+		livro.setDescricao("Novos recursos da linguagem");
+		livro.setValor(59.90);
+		livro.setIsbn("978-85-66250-46-6");
 		
-		System.out.println(livro.nome);
-		System.out.println(livro.descricao);
-		System.out.println(livro.valor);
-		System.out.println(livro.isbn);
+		livro.mostrarDetalhes();
 		
-		Livro outroLivro = new Livro();
-		livro.nome = "Lógica de Programação";
-		livro.descricao = "Crie seus primeiros programas";
-		livro.valor = 59.90;
-		livro.isbn = "978-85-66250-22-0";
+		Autor outroAutor = new Autor();
+		outroAutor.setNome("Paulo Silveira");
+		outroAutor.setEmail("paulo.silveira@caelum.com.br");
+		outroAutor.setCpf("123.456.789.10");
 		
-		System.out.println(livro.nome);
-		System.out.println(livro.descricao);
-		System.out.println(livro.valor);
-		System.out.println(livro.isbn);
+		Livro outroLivro = new Livro(outroAutor);
+		outroLivro.setNome("Lógica de Programação");
+		outroLivro.setDescricao("Crie seus primeiros programas");
+		outroLivro.setValor(59.90);
+		outroLivro.setIsbn("978-85-66250-22-0");
+		
+		outroLivro.mostrarDetalhes();
+		
 	}
 }
