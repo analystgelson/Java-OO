@@ -1,4 +1,12 @@
-package livraria;
+package br.com.gm.livraria.teste;
+
+import java.util.List;
+
+import br.com.gm.livraria.Autor;
+import br.com.gm.livraria.produtos.CarrinhoDeCompras;
+import br.com.gm.livraria.produtos.Ebook;
+import br.com.gm.livraria.produtos.LivroFisico;
+import br.com.gm.livraria.produtos.Produto;
 
 public class RegistroDeVendas {
 
@@ -17,10 +25,20 @@ public class RegistroDeVendas {
 		
 		CarrinhoDeCompras carrinho = new CarrinhoDeCompras();
 		
+		if ( fisico.aplicaDescontoDe10Porcento() ) {
+			System.out.println("Valor agora é " + fisico.getValor() );
+		}
+		
 		carrinho.adiciona(fisico);
 		carrinho.adiciona(ebook);
 		
 		System.out.println("Total: " + carrinho.getTotal());
+		
+		List<Produto> produtos = carrinho.getProdutos();
+		
+		for (Produto produto : produtos) {
+			System.out.println(produto.getValor());
+		}
 	}
 
 }

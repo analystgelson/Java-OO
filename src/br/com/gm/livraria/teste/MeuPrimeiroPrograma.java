@@ -1,4 +1,4 @@
-package livraria;
+package br.com.gm.livraria.teste;
 
 public class MeuPrimeiroPrograma {
 
