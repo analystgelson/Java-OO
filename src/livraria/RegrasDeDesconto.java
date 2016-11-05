@@ -4,16 +4,25 @@ public class RegrasDeDesconto {
 
 	public static void main(String[] args) {
 		
-		Livro livro = new Livro();
-		livro.adicionarValor(59.90);
+		Autor autor = new Autor();
+		autor.setNome("Gelson Moraes");
 		
-		System.out.println("Valor atual: " + livro.retornarValor());
-
-		if (!livro.aplicaDescontoDe(0.1)){
-			System.out.println("Desconto não pode ser maior do que 30%");
+		Livro livro = new Livro(autor);
+		livro.setValor(59.90);
+		
+		if (!livro.aplicaDescontoDe(0.3)){
+			System.out.println("Desconto do livro não pode ser maior do que 30%");
 		} else {
-			System.out.println("Valor com desconto: " + livro.retornarValor());
+			System.out.println("Valor do livro com desconto: " + livro.getValor());
+		}
+		
+		Ebook ebook = new Ebook(autor);
+		ebook.setValor(29.90);
+		
+		if (!ebook.aplicaDescontoDe(0.15)){
+			System.out.println("Desconto no ebook não pode ser maior do que 15%");
+		} else {
+			System.out.println("Valor de ebook com desconto: " + ebook.getValor());
 		}
 	}
-
 }

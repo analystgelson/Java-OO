@@ -2,6 +2,7 @@ package livraria;
 
 public class Livro {
 	
+	//sempre que possível usar 'private', pois pode furgir do encapsulamento
 	private String nome;
 	private String descricao;
 	private double valor;
@@ -88,9 +89,8 @@ public class Livro {
 	public boolean aplicaDescontoDe(double porcentagem) {
 		if (porcentagem > 0.3) {
 			return false;
-		} else if (!this.impresso && porcentagem > 0.15) {
-			return false;
 		}
+		System.out.println("aplicando desconto no Livro");
 		this.valor -= this.valor * porcentagem;
 		return true;
 	}
